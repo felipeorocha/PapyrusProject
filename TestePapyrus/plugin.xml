@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            id="TestePapyrus.contribution1">
+         <menu
+               label="New Submenu"
+               path="additions"
+               id="TestePapyrus.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="New Action"
+               class="testepapyrus.popup.actions.NewAction"
+               menubarPath="TestePapyrus.menu1/group1"
+               enablesFor="1"
+               id="TestePapyrus.newAction">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="TestePapyrus.objectContribution1"
+            objectClass="org.eclipse.ui.IEditorInput">
+         <menu
+               icon="icons/5124.png"
+               id="TestePlugin.menu4"
+               label="Comentário da Classe"
+               path="additions">
+            <groupMarker
+                  name="content">
+            </groupMarker>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="testepapyrus.ActionGetUMLElement"
+               id="TestePapyrus.action1"
+               label="Adicionar Comentário"
+               menubarPath="TestePlugin.menu4/content">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="testepapyrus.Teste"
+            id="testepapyrus.Teste"
+            name="Comentários">
+      </view>
+      <view
+            class="testepapyrus.Teste2"
+            id="testepapyrus.Teste2"
+            name="Comentários2">
+      </view>
+   </extension>
+
+</plugin>
